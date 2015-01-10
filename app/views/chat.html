@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-5">
+    <div class="panel panel-primary chat">
+      <div class="panel-heading">
+        <span class="glyphicon glyphicon-comment"></span> Chat
+        <div class="btn-group pull-right">
+          <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+            <span class="glyphicon glyphicon-chevron-down"></span>
+          </button>
+          <ul class="dropdown-menu slidedown">
+            <li><a href="#" ng-click="logout()"><span class="glyphicon glyphicon-off"></span>
+              Sign Out</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="panel-body">
+        <ul class="chat">
+          <chat-message ng-repeat="message in messages" message="message"></chat-message>
+        </ul>
+      </div>
+      <div class="panel-footer">
+        <form ng-submit="sendMessage()">
+          <div class="input-group">
+            <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..."
+                   name="messageText" ng-model="messageText"/>
+                          <span class="input-group-btn">
+                              <button type="submit" class="btn btn-warning btn-sm" id="btn-chat">
+                                Send
+                              </button>
+                          </span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
